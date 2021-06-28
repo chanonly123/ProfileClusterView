@@ -1,5 +1,5 @@
 # Automatic Profile cluster view
-Automatic managed image array
+Fully automatic managed circular image array.
 
 ## []()
 ![alt tag](https://github.com/chanonly123/ProfileClusterView/blob/main/ProfileClusterDemo.gif)
