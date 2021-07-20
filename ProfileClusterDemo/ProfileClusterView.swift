@@ -23,6 +23,13 @@ public class ProfileClusterView: UIView {
             setShadowLevel(shadowLevel)
         }
     }
+    
+    @IBInspectable
+    var maxVisible: Int = 0 {
+        didSet {
+            reloadDataInternal()
+        }
+    }
 
     @IBInspectable
     public var spacing: CGFloat = -8 {
@@ -129,6 +136,8 @@ public class ProfileClusterView: UIView {
         } else {
             visibleCount = 1
         }
+        
+        if maxVisible > 0 { visibleCount = maxVisible }
 
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
