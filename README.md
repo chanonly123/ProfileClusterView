@@ -21,6 +21,7 @@ let profileCluster = ProfileCluster()
 ### `spacing` - spacing between profile views.
 ### `alignment` - profile views alignment. (left/right/center)
 ### `startFrom` - starting position profile views. (left/right)
+### `maxVisible` - Maximum visible items. (0 means no limit)
 
 &nbsp;&nbsp;
 ## Closures
