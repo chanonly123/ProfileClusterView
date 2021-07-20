@@ -17,6 +17,9 @@ public class ProfileClusterView: UIView {
     public var configureImageView: (((imageView: UIImageView, index: Int)) -> Void)?
     public var configureCount: (() -> Int)?
     
+    // view cache to optimize resizing
+    var imageViewCache = [Int: UIView]()
+    
     @IBInspectable
     var shadowLevel: CGFloat = 0.0 {
         didSet {
@@ -114,6 +117,7 @@ public class ProfileClusterView: UIView {
     }
 
     public func reloadData() {
+        imageViewCache.removeAll()
         prevBounds = bounds.insetBy(dx: 10, dy: 10)
         reloadDataInternal()
     }
@@ -161,7 +165,12 @@ public class ProfileClusterView: UIView {
     }
 
     func addImageView(index: Int) {
+        if let found = imageViewCache[index] {
+            stackView.addArrangedSubview(found)
+            return
+        }
         let sub = UIView()
+        imageViewCache[index] = sub
         sub.translatesAutoresizingMaskIntoConstraints = false
         sub.heightAnchor.constraint(equalTo: sub.widthAnchor, multiplier: 1, constant: 0).isActive = true
         stackView.addArrangedSubview(sub)

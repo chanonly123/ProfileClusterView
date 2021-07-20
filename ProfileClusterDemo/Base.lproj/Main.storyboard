@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfK-EH-t3k" customClass="ProfileClusterView" customModule="ProfileClusterDemo" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="20" y="228.5" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HKe-aY-v30"/>
                                 </constraints>
@@ -28,17 +28,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="OsD-uw-soI">
+                                <rect key="frame" x="20" y="328.5" width="374" height="239"/>
+                                <string key="text">͍
+Drag left/right</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JfK-EH-t3k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6fe-X8-cFz"/>
+                            <constraint firstItem="OsD-uw-soI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="12e-v1-3lM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JfK-EH-t3k" secondAttribute="trailing" constant="20" id="c7e-OM-apj"/>
+                            <constraint firstItem="OsD-uw-soI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fL5-7G-Bnq"/>
                             <constraint firstItem="JfK-EH-t3k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pg7-VN-5yx"/>
+                            <constraint firstItem="OsD-uw-soI" firstAttribute="top" secondItem="JfK-EH-t3k" secondAttribute="bottom" constant="50" id="v90-Ih-6EE"/>
+                            <constraint firstItem="OsD-uw-soI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zmy-tX-fxh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="profileCluster" destination="JfK-EH-t3k" id="l2h-ia-0bT"/>
+                        <outlet property="trailingConstraint" destination="c7e-OM-apj" id="ZfQ-dD-Hel"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -49,6 +61,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
