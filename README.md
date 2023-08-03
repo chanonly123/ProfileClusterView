@@ -19,7 +19,7 @@ let profileCluster = ProfileCluster()
 &nbsp;&nbsp;
 ## Options
 ### `spacing` - spacing between profile views.
-### `alignment` - profile views alignment. (left/right/center)
+### `alignment` - profile views alignment. (left/right/center/justify)
 ### `startFrom` - starting position profile views. (left/right)
 ### `maxVisible` - Maximum visible items. (0 means no limit)
 
@@ -31,16 +31,27 @@ viewProfiles.configureCount = {
     return 10
 }
 ```
-### `configureImageView` - to configure image views
+### `configureImageView` or `configureImageViewCustom` - to configure image views
 ```
 viewProfiles.configureImageView = { cluster in
     cluster.imageView.image = something
 }
+// or
+viewProfiles.configureImageViewCustom = { cluster in
+    let view = UIView() // create your view
+    cluster.view.addSubview(view)
+}
 ```
-### `configureMoreView` - to configure more label
+### `configureMoreView` or `configureMoreViewCustom` - to configure more label
 ```
 viewProfiles.configureMoreView = { cluster in
     cluster.label.backgroundColor = .blue
+}
+// or
+viewProfiles.configureImageViewCustom = { cluster in
+    let lbl = UILabel()
+    lbl.text = "+\(cluster.more)"
+    cluster.view.addSubview(lbl)
 }
 ```
 
